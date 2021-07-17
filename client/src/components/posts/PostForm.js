@@ -13,14 +13,14 @@ const PostForm = ({ addPost,auth }) => {
             </div>
             <div class="post bg-white">
                 
-                <div>
+                {/* <div>
                     <img
                         className="round-img"
                         src={auth.user.avatar}
                         alt=""/>
 
                     <p>{auth.user.name}</p>
-                </div>
+                </div> */}
                 <form onSubmit={
                     e => {
                         e.preventDefault();
