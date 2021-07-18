@@ -14,12 +14,12 @@ const PostForm = ({ addPost,auth }) => {
             <div class="post bg-white p-1">
                 
                 <div className="postsinmobile">
-                    {/* <img
+                    <img
                         className="round-img"
                         src={auth.user.avatar}
                         alt=""/>
 
-                    <h4>{auth.user.name}</h4> */}
+                    <h4>{auth.user.name}</h4>
 
                 </div>
                 <form onSubmit={
