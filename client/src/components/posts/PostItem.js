@@ -28,15 +28,17 @@ const PostItem = ({
     showActions
 }) => {
     return <div className="post bg-white p-1 my-1">
-                <div>
-                    <Link to={`/profile/${user}`}>
+                
+                <Link to={`/profile/${user}`}>
+                    <div className="postsinmobile">
                         <img
                             className="round-img"
                             src={avatar}
                             alt=""/>
                         <h4>{name}</h4>
-                    </Link>
-                </div>
+                    </div>
+                </Link>
+                
                 <div>
                     <p className="my-1">
                         {text}
@@ -47,12 +49,12 @@ const PostItem = ({
 
                     { showActions && <Fragment>
                         <button onClick= {e => addLike(_id)} type="button" className="btn btn-light">
-                            <span><FaHeart/> {
+                            <span><FaHeart color="red"/> {
                                 likes.length > 0 && <span>{likes.length}</span>
                             }</span>
                         </button>
                         <button onClick= {e => removeLike(_id)} type="button" className="btn btn-light">
-                            <><FaHeartBroken/> </>
+                            <><FaHeartBroken color="red"/> </>
                         </button>
                         <Link to={`/posts/${_id}`} className="btn btn-primary">
                             <MdComment size="1.2rem"/> {
@@ -62,7 +64,7 @@ const PostItem = ({
                             }
                         </Link>
 
-                        {/* {
+                        {
                             !auth.loading && user === auth.user._id && (
                                 <button onClick={
                                         e => deletePost(_id)
@@ -72,11 +74,11 @@ const PostItem = ({
                                     <><ImCross/></>
                                 </button>
                             )
-                        } */}
+                        }
                     </Fragment>}
                 
                 </div>
-                <div>
+                {/* <div>
                     { showActions && 
                         !auth.loading && user === auth.user._id && (
                             <button onClick={
@@ -88,7 +90,7 @@ const PostItem = ({
                             </button>
                         )
                     }
-                </div>
+                </div> */}
         </div>
     ;
 }

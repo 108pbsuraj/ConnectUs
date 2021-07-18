@@ -116,7 +116,7 @@ export const addPost = formData => async dispatch => {
             payload: res.data
         });
 
-        dispatch(setAlert('Post is Created', 'success'));
+        dispatch(setAlert('Post Created', 'success'));
     } catch (err) {
         dispatch({
             type: POST_ERROR,
@@ -140,7 +140,6 @@ export const addComment = (postId, formData) => async dispatch => {
             payload: res.data
         });
 
-        dispatch(setAlert('Comment Added', 'success'));
     } catch (err) {
         dispatch({
             type: POST_ERROR,

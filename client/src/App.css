@@ -460,7 +460,7 @@ button {
 
 .post {
   display: grid;
-  grid-template-columns: 1fr 4fr 0.25fr;
+  grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
   align-items: center;
 }
@@ -472,11 +472,16 @@ button {
   align-items: center;
 }
 
+h4 {
+  text-align: center;
+}
+
 .finalcomment {
   display: grid;
   grid-template-columns: 1fr 6fr 0.5fr;
   grid-gap: 0rem;
   align-items: center;
+  padding: 1%;
 }
 
 .finalcomment > div:first-child {
@@ -499,6 +504,8 @@ button {
 
 .post img {
   width: 100px;
+  align-items: center;
+  margin-left: 17%;
 }
 
 .post .comment-count {
@@ -600,6 +607,42 @@ button {
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
+  }
+
+  /* this css is for mobile view of posts */
+
+  .post {
+    /* display: grid; */
+    grid-template-columns: 1fr;
+    grid-gap: 0rem;
+    /* align-items: center; */
+  }
+  .post .postsinmobile {
+    display: flex;
+    flex-direction: row;
+    padding: 0%;
+    margin: 0%;
+  }
+  .postsinmobile img {
+    width: 40px;
+    margin-left: 0px;
+  }
+  .postsinmobile h4 {
+    text-align: left;
+    margin-left: 20px;
+    line-height: 40px;
+    width: 100%;
+  }
+  .finalcomment img {
+    width: 35px;
+    margin-right: 5%;
+  }
+  .finalcomment {
+    display: grid;
+    grid-template-columns: 2fr 6fr 0.5fr;
+    grid-gap: 0rem;
+    align-items: center;
+    padding: 1%;
   }
 }
 div#root {

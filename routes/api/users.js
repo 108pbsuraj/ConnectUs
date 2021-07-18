@@ -45,6 +45,7 @@ async(req, res) => {
             r: 'pg',
             d: 'mm'
         });
+        console.log(avatar);
         
         user = new User({
             name,

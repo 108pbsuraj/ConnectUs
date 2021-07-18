@@ -9,7 +9,7 @@ import Experience from './Experience'
 import Education from './Education'
 import {CgProfile} from 'react-icons/cg'
 import {ImProfile} from 'react-icons/im'
-import { MdDeleteSweep } from 'react-icons/md'
+import { FaUserTimes } from 'react-icons/fa'
 
 const Dashboard = ({getCurrentProfile, deleteAccount, auth: {user}, profile: {profile, loading}}) => {
     useEffect(() => {
@@ -30,7 +30,7 @@ const Dashboard = ({getCurrentProfile, deleteAccount, auth: {user}, profile: {pr
                 <Experience experience={profile.experience} />
                 <Education education={profile.education} />
                 <div className='my-2'>
-                    <button className='btn btn-danger' onClick={()=> deleteAccount()}><MdDeleteSweep size="1.3rem"/> Delete My Account</button>
+                    <button className='btn btn-danger' onClick={()=> deleteAccount()}><FaUserTimes size="1.3rem"/> Delete My Account</button>
                 </div>
             </Fragment>
              : 

@@ -18,21 +18,21 @@ const CommentForm = ({postId, addComment }) => {
                     addComment(postId, {text});
                     setText('');
                 }
-            }class="form my-1">
-            <div className="postcomment">
-                <textarea
-                    name="text"
-                    cols="300"
-                    rows="1"
-                    placeholder="Write a comment..."
-                    value={text}
-                    onChange = {e => setText(e.target.value)}
-                    required>
-                </textarea>
-                <button type="submit"><IoIosSend size="1.5rem"/></button>
-                {/* IoIosSend */}
-                {/* <input type="submit" class="btn btn-dark my-1" value="Submit" /> */}
-            </div>
+                }class="form my-1">
+                <div className="postcomment">
+                    <textarea
+                        name="text"
+                        cols="300"
+                        rows="1"
+                        placeholder="  Write a comment..."
+                        value={text}
+                        onChange = {e => setText(e.target.value)}
+                        required>
+                    </textarea>
+                    <button type="submit"><IoIosSend size="1.5rem"/></button>
+                    {/* IoIosSend */}
+                    {/* <input type="submit" class="btn btn-dark my-1" value="Submit" /> */}
+                </div>
             </form>
         </div>
     )

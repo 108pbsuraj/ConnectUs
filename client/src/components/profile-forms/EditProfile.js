@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { createProfile, getCurrentProfile } from '../../actions/profile'
 
 
-const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProfile, history}) => {
+const EditProfile = ({profile:{profile, loading}, createProfile, getCurrentProfile, history}) => {
 
     const [formData, setFormData] = useState({
         company : '',
@@ -24,14 +24,14 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
 
     const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
-    useEffect (() => {
+    useEffect(() => {
         getCurrentProfile();
         setFormData({
             company:loading || !profile.company ? '':profile.company,
             website:loading || !profile.website ? '':profile.website,
             location:loading || !profile.location ? '':profile.location,
             status:loading || !profile.status ? '':profile.status,
-            skills:loading || !profile.skills ? '':profile.skills,
+            skills:loading || !profile.skills ? '':profile.skills.join(','),
             githubusername:loading || !profile.githubusername ? '':profile.githubusername,
             bio:loading || !profile.bio ? '':profile.bio,
             twitter:loading || !profile.social ? '':profile.social.twitter,
@@ -40,7 +40,7 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
             youtube:loading || !profile.social ? '':profile.social.youtube,
             instagram:loading || !profile.social ? '':profile.social.instagram
         });
-    }, [loading, getCurrentProfile]);
+    }, [loading]);
 
     const {
         company,
@@ -67,10 +67,10 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
     return (
         <Fragment>
             <h1 className="large text-primary">
-                Create Your Profile
+                Edit Your Profile
             </h1>
             <p className="lead">
-                <i className="fas fa-user"></i> Let's get some information to make your
+                <i className="fas fa-user"></i> Let's Edit some information to make your
                 profile stand out
             </p>
             <small>* = required field</small>
@@ -175,11 +175,11 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
 
 EditProfile.propTypes = {
     createProfile: PropTypes.func.isRequired,
-    getCurrentProfile: PropTypes.func.isRequired,
-    profile: PropTypes.object.isRequired
+    getCurrentProfile:PropTypes.func.isRequired,
+    profile:PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = state =>({
     profile: state.profile
 });
 

@@ -84,7 +84,7 @@ export const getGithubRepos = username => async dispatch => {
 
 // Create or update your profile
 
-export const createProfile = (FormData, history, edit = false) => async dispatch => {
+export const createProfile = (formData, history, edit = false) => async dispatch => {
     try {
         const config = {
             headers:{
@@ -92,7 +92,7 @@ export const createProfile = (FormData, history, edit = false) => async dispatch
             }
         }
 
-        const res = await axios.post('/api/profile',FormData, config);
+        const res = await axios.post('/api/profile',formData, config);
 
         dispatch ({
             type: GET_PROFILE,
@@ -101,7 +101,10 @@ export const createProfile = (FormData, history, edit = false) => async dispatch
         dispatch(setAlert(edit ? 'Profile is Updated' : 'Profile Created', 'success'));
 
         if(!edit){
-            history.push('./dashboard');
+            history.push('/dashboard');
+        }
+        else{
+            history.push('/dashboard');
         }
 
     } catch (err) {
